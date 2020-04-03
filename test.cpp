@@ -1,18 +1,31 @@
-#pragma hdrstop
-#include <stdio.h>
 #include <iostream>
-#include <string>
+#include <windows.h>
+
 using namespace std;
 
-#pragma argsused
+class Text {
+    private: 
+    string ingressText;
+
+    public:
+    void setText (string text){
+        ingressText = text;
+    }
+    string getText (){
+        return ingressText;
+    }
+};
+
 int main(int argc, char* argv[])
 {
-    string value = "";
+    Text* text = new Text();
     cout <<"inserte texto: " <<endl;
-    cin >>value;
+    string value;
+    cin>>value;
+    text->setText(value);
     system ("CLS");
-    cout <<"su texto: " <<endl <<value <<endl;
+    cout<<text->getText();
     system ("pause");
-
+    
         return 0;
 }
